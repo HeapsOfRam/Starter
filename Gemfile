@@ -5,13 +5,17 @@ ruby '2.0.0'
 gem 'rails', '4.0.0'
 
 # Use sqlite3 as the database for Active Record
-group :development do
+group :development, :test do
 	gem 'sqlite3', '1.3.7'
+	gem 'rspec-rails', '2.13.1'
 end
-# Use SCSS for stylesheets
-gem 'sass-rails', '4.0.0'
-
 # Use Uglifier as compressor for JavaScript assets
+group :test do
+	gem 'selenium-webdriver', '2.0.0'
+	gem 'capybara', '2.1.0'
+end
+
+gem 'sass-rails', '4.0.0'
 gem 'uglifier', '2.1.1'
 
 # Use CoffeeScript for .js.coffee assets and views
@@ -39,6 +43,11 @@ end
 
 # Use unicorn as the app server
 gem 'unicorn'
+
+group :production do
+	gem 'pg', '0.15.1'
+	gem 'rails_12factor', '0.0.2'
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
