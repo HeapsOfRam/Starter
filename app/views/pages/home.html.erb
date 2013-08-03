@@ -1,11 +1,12 @@
-<% provide(:title, 'Ryan March') %>
+<% provide(:title, 'Home') %>
 <% provide(:header, '') %> 
 
 <!DOCTYPE html>
-<html>
-  <body>
-	<p>
-    	This is the home page for Ryan March
-    </p>
-  </body>
-</html>
+<div class="center hero-unit">
+	<h1>Welcome to Ryan March</h1>
+	<h2>
+		This is my home page
+	</h2>
+</div>
+
+<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
