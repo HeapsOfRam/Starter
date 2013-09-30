@@ -19,4 +19,7 @@ class PagesController < ApplicationController
 
   def subscribe
   end
+
+  def starcats
+  end
 end
