@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-RyanMarch::Application.config.secret_key_base = '13190201fedc84ba8e995f1e42a2abff3ecdb0922f2105281b88bd7ae9b87e3dfe45acac8185261a5d60a74912e2d4d47bcd34f8b5950cba29a57d9910a94b75'
+require 'securerandom'
+
+def secure_token
+	token_file = Rails.root.join('.secret')
+	if File.exist?(token_file)
+		#use the existing token
+		File.read(token_file).chomp
+	else
+		#generate a new token and store it in token_file
+		token = SecureRandom.hex(64)
+		File.write(token_file, token)
+		token
+	end
+end
+
+RyanMarch::Application.config.secret_key_base = secure_token

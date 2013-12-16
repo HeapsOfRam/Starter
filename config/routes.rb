@@ -1,11 +1,11 @@
 RyanMarch::Application.routes.draw do
   root 'pages#home'
-  match '/help', to: 'pages#help', via: 'get'
-  match '/about', to: 'pages#about', via: 'get'
-  match '/resume', to: 'pages#resume', via: 'get'
-  match '/contact', to: 'pages#contact', via: 'get'
+  match '/help',      to: 'pages#help',      via: 'get'
+  match '/about',     to: 'pages#about',     via: 'get'
+  match '/resume',    to: 'pages#resume',    via: 'get'
+  match '/contact',   to: 'pages#contact',   via: 'get'
   match '/subscribe', to: 'pages#subscribe', via: 'get'
-  match '/starcats', to: 'pages#starcats', via: 'get'
+  match '/starcats',  to: 'pages#starcats',  via: 'get'
   # get "pages/home"
   # get "pages/help"
   # get "pages/about"
